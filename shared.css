@@ -5,7 +5,7 @@
 body {
     margin: 0px;
     font-family: 'Alegreya', serif;
-    overflow-x: hidden;
+    
 }
 .backdrop {
     display: none;
