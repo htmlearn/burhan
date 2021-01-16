@@ -46,27 +46,35 @@
     margin-bottom: 0px;
 }
 
-#products {
+/*#products {
     text-align: center;
-    overflow: hidden;
-}
+}*/
 
 .plan {
     background: #d5ffdc;
-    display: inline-block;
-    vertical-align: middle;
-    width: 30%;
+    width: 100%;
     text-align: center;
     padding: 1rem;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
     margin-top: 1.8rem;
     font-family: 'Montserrat', sans-serif;
 }
-
+@media (min-width: 40rem){
+    #products {
+    text-align: center;
+}
+    .plan{
+        display: inline-block;
+        vertical-align: middle;
+        width: 30%; 
+        margin: 0.5rem;
+    }
+    
+}
 .plan--highlighted {
     background: #19b84c;
     color: white;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    /*box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);*/
 }
 
 .plan__annotation {
