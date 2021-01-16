@@ -3,9 +3,15 @@
 }
 
 body {
-    margin: 0px;
+    margin: 0;
     font-family: 'Alegreya', serif;
-    
+    overflow-x: hidden;
+}
+@media (min-width: 40rem){
+    body{
+        overflow-x: hidden;  
+    }
+     
 }
 .backdrop {
     display: none;
@@ -19,12 +25,13 @@ body {
 }
 
 .main-header {
+    width: 100%; /* if the position:fixed is applied on the element the width:100% do not refer to the parent element width but the width of the viewport of HTML document. */
+    /* But if the position property is not defiend then the width:100& does refer to the width of its parent element. */
     background: black;
     color: white;
     padding: 0.7rem 1.2rem;
     position: fixed;
-    width: 100%; /* if the position:fixed is applied on the element the width:100% do not refer to the parent element width but the width of the viewport of HTML document. */
-    /* But if the position property is not defiend then the width:100& does refer to the width of its parent element. */
+    left: 0;
     top: 0;
     z-index: 1;
 }
