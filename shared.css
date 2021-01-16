@@ -7,12 +7,13 @@ body {
     font-family: 'Alegreya', serif;
     overflow-x: hidden;
 }
-@media (min-width: 40rem){
-    body{
-        overflow-x: hidden;  
+
+@media (min-width: 40rem) {
+    body {
+        overflow-x: hidden;
     }
-     
 }
+
 .backdrop {
     display: none;
     position: fixed;
@@ -21,11 +22,12 @@ body {
     z-index: 100;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .main-header {
-    width: 100%; /* if the position:fixed is applied on the element the width:100% do not refer to the parent element width but the width of the viewport of HTML document. */
+    width: 100%;
+    /* if the position:fixed is applied on the element the width:100% do not refer to the parent element width but the width of the viewport of HTML document. */
     /* But if the position property is not defiend then the width:100& does refer to the width of its parent element. */
     background: black;
     color: white;
@@ -35,26 +37,34 @@ body {
     top: 0;
     z-index: 1;
 }
+
 .toggle-button {
-  width: 3rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding-top: 0;
-  padding-bottom: 0;
-  vertical-align: middle;
+    float: right;
+    width: 3rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
 }
 
 .toggle-button:focus {
-  outline: none;
+    outline: none;
 }
 
 .toggle-button__bar {
-  width: 100%;
-  height: 0.2rem;
-  background: white;
-  display: block;
-  margin: 0.6rem 0;
+    width: 80%;
+    height: 0.2rem;
+    background: white;
+    display: block;
+    margin: 0.4rem 0;
+}
+
+@media (min-width: 40rem) {
+    .toggle-button {
+        display: none;
+    }
 }
 
 .main-header__brand {
@@ -65,10 +75,11 @@ body {
     vertical-align: middle;
 }
 
-.main-header img{
+.main-header img {
     width: 30px;
     vertical-align: middle;
 }
+
 .main-header div {
     display: inline-block;
     vertical-align: middle;
@@ -76,10 +87,18 @@ body {
 }
 
 .main-nav {
-    display: inline-block;
+    display: none;
+    /*    display: inline-block;*/
     text-align: right;
-    width: calc(100% - 12rem);
+    /*    width: calc(100% - 12rem);*/
     vertical-align: middle;
+}
+
+@media (min-width: 40rem) {
+    .main-nav {
+        display: inline-block;
+        width: calc(100% - 7rem);
+    }
 }
 
 .main-nav__items {
@@ -97,7 +116,7 @@ body {
     margin-right: 0px;
 }
 
-.main-nav__item a{
+.main-nav__item a {
     text-decoration: none;
     color: white;
     border-bottom: solid 1px transparent;
@@ -107,46 +126,65 @@ body {
     -o-transition: color .2s ease-out, border-bottom-color .2s ease-out;
     transition: color .2s ease-out, border-bottom-color .2s ease-out;
 }
-.mobile-nav__item a{
+
+.mobile-nav__item a {
     text-decoration: none;
     color: white;
     padding: 0.2rem 0;
 }
 
 .main-nav__item a:hover,
-.main-nav__item a:active
-{
+.main-nav__item a:active {
     color: #EFECEC;
     border-bottom: solid 1px white;
     font-weight: bold;
 }
 
 .mobile-nav {
-  display: none;
-  position: fixed;
-  z-index: 101;
-  top: 0;
-  left: 0;
-  background: black;
-  width: 80%;
-  height: 100vh;
+    display: none;
+    position: fixed;
+    z-index: 101;
+    top: 3.6rem;
+    left: 0;
+    background: black;
+    width: 100%;
+    height: 60vh;
+    border-top: 1px solid #808080;
 }
 
 .mobile-nav__items {
-  width: 90%;
-  height: 100%;
-  list-style: none;
-  margin: 10% auto;
-  padding: 0;
-  text-align: center;
+    /*width: 90%;*/
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    text-align: center;
 }
 
 .mobile-nav__item {
-  margin: 1rem 0;
+    margin: 1rem 0;
+    /*   line-height: 2rem;*/
 }
 
 .mobile-nav__item a {
-  font-size: 1.5rem;
+    display: block;
+    /*font-size: 1.5rem;*/
+    font-size: 1.2rem;
+    /*color: #707070;*/
+    color: white;
+    padding: 1rem 0;
+}
+
+
+/*.mobile-nav__item:hover {
+    background: #f2f2f2;
+}*/
+
+.mobile-nav__item a:hover,
+.mobile-nav__item a:focus {
+    color: black;
+    background: #f2f2f2;
 }
 
 .button {
@@ -169,15 +207,43 @@ body {
 .button:focus {
     outline: none;
 }
-
+.main-footer{
+    margin-top: 0;
+    padding: 0.7rem 0;
+    background: black;
+    color: white;
+}
+.main-footer__links{
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.main-footer__link {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.main-footer__link a{
+    color: white;
+    text-decoration: none;
+}
+.main-footer__description{
+    text-align: center;  
+    
+    font-size: 0.8rem;
+}
+/*
 .main-footer {
     background: black;
     margin-top: 3rem;
+    height: 11vh;
 }
-
+.main-footer__nav {
+    display: block;
+}
 .main-footer__links {
     list-style: none;
-    padding: 0;
+    vertical-align: middle;
 }
 
 .main-footer__link {
@@ -194,20 +260,43 @@ body {
 .main-footer__link a:active {
     color: #ccc;
 }
-
-.main-footer__nav {
-    display: inline-block;
-}
-
-.main-footer__description {
-    display: inline-block;
-    text-align: right;
+*/
+/*.main-footer__description {
+//   display: inline-block;
+    display: block;
+    text-align: center;
     color: white;
-    width: calc(100% - 14.1rem);
-    font-size: 1rem;
-    margin-right: 16px;
+//    width: calc(100% - 14.1rem);
+    font-size: 0.9rem;
+//      margin-right: 16px;
+//  vertical-align: middle;
 }
-
-.open{
+*/
+@media (min-width:40rem){
+    .main-footer{
+        padding-bottom: 0;
+        padding: 1rem;
+    }
+    .main-footer__nav{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .main-footer__link{
+        display: inline-block;
+        margin-right: 1rem;
+        margin-bottom: 0;
+}
+    .main-footer__link a:hover,
+.main-footer__link a:active {
+    color: #ccc;
+}
+    .main-footer__description{
+        display: inline-block;
+        width: calc(100% - 12rem);
+        text-align: right;
+        font-size: 1rem;
+    }
+}
+.open {
     display: block !important;
 }
